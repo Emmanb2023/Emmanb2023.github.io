@@ -11,20 +11,37 @@
       color: #1a1a1a;
       margin: 0;
       padding: 2em;
+      font-size: 18px;
+      line-height: 1.6;
     }
     header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background-color: #001f3f;
       color: white;
       padding: 2em;
-      text-align: center;
+      border-bottom: 5px solid #bfa100;
     }
-    h1, h2 {
+    header img {
+      max-width: 160px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 0.3em;
+    }
+    h2 {
+      font-size: 28px;
+      margin-top: 1.5em;
+      margin-bottom: 0.5em;
       color: #001f3f;
     }
     section {
-      margin-bottom: 2em;
+      margin-bottom: 2.5em;
       border-left: 5px solid #006400;
-      padding-left: 1em;
+      padding-left: 1.2em;
     }
     .highlight {
       color: #bfa100;
@@ -34,11 +51,14 @@
       background-color: #f4f4f4;
       padding: 1em;
       border-radius: 8px;
+      text-align: center;
     }
     footer {
       margin-top: 3em;
       font-style: italic;
       color: #444;
+      border-top: 1px solid #ccc;
+      padding-top: 1em;
     }
     a {
       color: #006400;
@@ -49,9 +69,12 @@
 <body>
 
 <header>
-  <h1>Enmanuel Bique</h1>
-  <p class="highlight">Hybrid Lawyer | Wellness Mentor | Strategic Empowerment Coach</p>
-  <p>Dublin-based with a multicultural outlook and a passion for justice, innovation, and holistic growth.</p>
+  <div>
+    <h1>Enmanuel Bique</h1>
+    <p class="highlight">Hybrid Lawyer | Wellness Mentor | Strategic Empowerment Coach</p>
+    <p>Dublin-based with a multicultural outlook and a passion for justice, innovation, and holistic growth.</p>
+  </div>
+  <img src="profile.jpg" alt="Enmanuel Bique">
 </header>
 
 <section>
@@ -97,18 +120,7 @@
 
 <section class="graph">
   <h2>Performance Graph</h2>
-  <ul>
-    <li>Communication: 95%</li>
-    <li>Teamwork: 70%</li>
-    <li>Working Alone: 100%</li>
-    <li>Under Pressure: 95%</li>
-    <li>Critical Thinking: 95%</li>
-    <li>Management: 60%</li>
-    <li>Time Keeping: 85%</li>
-    <li>Creativity: 97%</li>
-    <li>Honesty: 90%</li>
-    <li>Adaptability: 100%</li>
-  </ul>
+  <img src="enmanuel_performance_chart.png" alt="Performance Graph" style="max-width:100%; height:auto;">
 </section>
 
 <section>
