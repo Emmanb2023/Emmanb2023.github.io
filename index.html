@@ -3,102 +3,174 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Enmanuel Bique — Digital Résumé</title>
+  <title>Enmanuel Bique – Digital Résumé</title>
   <style>
+    :root {
+      --navy: #001f3f;
+      --gold: #bfa100;
+      --green: #006400;
+      --text: #1a1a1a;
+      --light: #f4f4f4;
+    }
     body {
-      font-family: 'Segoe UI', system-ui, sans-serif;
-      background-color: #f4f4f4;
+      font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+      background-color: #ffffff;
+      color: var(--text);
       margin: 0;
+      padding: 2em;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    header {
+      display: flex;
+      gap: 2rem;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--navy);
+      color: white;
+      padding: 2em;
+      border-bottom: 5px solid var(--gold);
+      border-radius: 8px;
+    }
+    header img {
+      max-width: 160px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    h1 { font-size: 36px; margin-bottom: 0.3em; }
+    h2 { font-size: 28px; margin-top: 1.5em; margin-bottom: 0.5em; color: var(--navy); }
+    section { margin-bottom: 2.5em; border-left: 5px solid var(--green); padding-left: 1.2em; }
+    .highlight { color: var(--gold); font-weight: bold; }
+    .graph { background-color: var(--light); padding: 1em; border-radius: 8px; text-align: center; }
+    footer { margin-top: 3em; font-style: italic; color: #444; border-top: 1px solid #ccc; padding-top: 1em; }
+    a { color: var(--green); text-decoration: none; }
+    .animate { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+    .animate.visible { opacity: 1; transform: translateY(0); }
+
+    /* Timeline styling */
+    .timeline-section {
+      margin-bottom: 2.5em;
       padding: 0;
-      color: #222;
+      border-left: none;
     }
-
-    section {
-      padding: 2rem;
-      border-bottom: 1px solid #ccc;
+    .timeline-section h2 {
+      color: var(--navy);
+      margin-left: 0.2em;
     }
-
-    h2 {
-      color: #0078D7;
-      margin-bottom: 1rem;
-    }
-
-    .animate {
-      animation: fadeIn 1s ease-in;
-    }
-
-    img, video {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin-top: 1rem;
-    }
-
-    iframe {
+    .timeline-frame {
       width: 100%;
       height: 650px;
-      border: none;
+      border: 0;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      header { flex-direction: column; text-align: center; }
+      .timeline-frame { height: 550px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- TimelineJS Embed -->
-  <section class="animate">
-    <iframe src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vQMaXoVITAFQ1Uj1j1AHju66UvFO9xuAkFwbcizVCpHm1krvE1wtnek5uskP9uuXss4rO9PIQNPNERy&font=Default&lang=en&initial_zoom=2&width=100%25&height=650" width="100%" height="650" webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder="0"></iframe>
-  </section>
+<section class="timeline-section animate">
+  <h2>My Professional Journey</h2>
+  <iframe
+    class="timeline-frame"
+    src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vQMaXoVITAFQ1Uj1j1AHju66UvFO9xuAkFwbcizVCpHm1krvE1wtnek5uskP9uuXss4rO9PIQNPNERy&font=Default&lang=en&initial_zoom=2&width=100%25&height=650"
+    width="100%" height="650" frameborder="0"
+    allowfullscreen webkitallowfullscreen mozallowfullscreen>
+  </iframe>
+</section>
 
-  <!-- Profile Image -->
-  <section class="animate">
-    <h2>Profile</h2>
-    <img src="https://raw.githubusercontent.com/Emmanb2023/digital-resume-assets/main/Law-office.png" alt="Enmanuel Bique — Profile Image">
-  </section>
+<header class="animate">
+  <div>
+    <h1>Enmanuel Bique</h1>
+    <p class="highlight">Hybrid Law Practitioner | Wellness Mentor | Strategic Empowerment Coach</p>
+    <p><em>Jurisprudence, Strategic Leadership, and Social Economy</em></p>
+    <p>Highly committed law student with a strong foundation in trilingual communication (French, Spanish, English) and a focus on lawful practice and social economy leadership.</p>
+  </div>
+  <img src="Law-office.png" alt="Enmanuel Bique">
+</header>
 
-  <!-- Interests & Hobbies -->
-  <section class="animate">
-    <h2>Interests & Hobbies</h2>
-    <p>Wellness and energy practices, jazz, painting, and the arts. Former professional boxer.</p>
-  </section>
+<section class="animate">
+  <h2>Personal Statement</h2>
+  <p><strong>Professional Summary:</strong> I am a committed law student focused on becoming a respected solicitor and social economy leader. Known for attention to detail, integrity, and strategic thinking, I bring a multicultural outlook and a passion for justice to every role.</p>
+</section>
 
-  <!-- Performance Metric -->
-  <section class="animate">
-    <h2>Performance Metric</h2>
-    <img src="https://raw.githubusercontent.com/Emmanb2023/digital-resume-assets/main/Performance-Metric.png" alt="Performance Metric showing achievements and growth">
-  </section>
+<section class="animate">
+  <h2>Education</h2>
+  <p><strong>Rathmines College, Dublin</strong> – QQI Certificate in Legal Studies (2025–2026)</p>
+  <p><strong>Kingstown College, Dublin</strong> – QQI Certificate in Mental Health & Wellness Life Coaching (2024–2025)</p>
+</section>
 
-  <!-- Contact -->
-  <section class="animate">
-    <h2>Contact</h2>
-    <p><strong>Phone:</strong> +353 89 605 3548</p>
-    <p><strong>Email:</strong> <a href="mailto:biqfitness@proton.me">biqfitness@proton.me</a></p>
-    <p><strong>Linktree:</strong> <a href="https://linktr.ee/biqfitness" target="_blank">linktr.ee/biqfitness</a></p>
-  </section>
+<section class="animate">
+  <h2>Skills</h2>
+  <ul>
+    <li>Legal research, document drafting, strategic advocacy</li>
+    <li>Multilingual: French, Spanish, Portuguese</li>
+    <li>Technical troubleshooting (Windows, Linux Mint, VirtualBox)</li>
+    <li>Digital storytelling, résumé innovation</li>
+  </ul>
+</section>
 
-  <!-- Referees -->
-  <section class="animate">
-    <h2>Referees</h2>
-    <ul>
-      <li><strong>Lukas Wisniewski</strong> — Professional Trainer at David Floyd Gym | Tel: +353 89 444 8069</li>
-      <li><strong>Shane Dalton</strong> — Tutor at Rathmines College | Email: <a href="mailto:shane.dalton@rc.cdetb.ie">shane.dalton@rc.cdetb.ie</a> | Tel: +353 1 497 533</li>
-    </ul>
-  </section>
+<section class="animate">
+  <h2>Professional Experience</h2>
+  <p><strong>Private Security Officer — RFC (2019–2023)</strong></p>
+  <ul>
+    <li>Crowd management, theft prevention, staff protection</li>
+    <li>CCTV monitoring and conflict resolution</li>
+  </ul>
+</section>
 
-  <!-- Closing Clause -->
-  <footer>
-    By: Enmanuel: Bique©. For the Claimant's-Knowledge: By the Autograph of the Living-Man: Enmanuel: Bique©. With the Claim of the Life: With the Claim of the Rights-Reserved: Without Prejudice: UCC 1-308.
-  </footer>
+<section class="animate">
+  <h2>Volunteer Work</h2>
+  <ul>
+    <li>Boxing coach & youth mentor (2018–2025): Led training sessions, planned sports events, cooked for youth groups</li>
+  </ul>
+</section>
+
+<section class="animate">
+  <h2>Interests & Hobbies</h2>
+  <p>Wellness and energy practices, jazz, painting, and the arts. Former professional boxer.</p>
+</section>
+
+<section class="graph animate">
+  <h2>Performance Graph</h2>
+  <img src="Performance-Metric.png" alt="Performance-Metric" style="max-width:100%; height:auto;">
+</section>
+
+<section class="animate">
+  <h2>Contact</h2>
+  <p>📞 <strong>Phone:</strong> +353 89 605 3548</p>
+  <p>📧 <strong>Email:</strong> <a href="mailto:biqfitness@proton.me">biqfitness@proton.me</a></p>
+  <p>🔗 <strong>Linktree:</strong> <a href="https://linktr.ee/biqfitness" target="_blank">linktr.ee/biqfitness</a></p>
+</section>
+
+<section class="animate">
+  <h2>Referees</h2>
+  <ul>
+    <li><strong>Lukas Wisniewski</strong> — Professional Trainer at David Floyd Gym | Tel: +353 89 444 8069</li>
+    <li><strong>Shane Dalton</strong> — Tutor at Rathmines College | Email: <a href="mailto:shane.dalton@rc.cdetb.ie">shane.dalton@rc.cdetb.ie</a> | Tel: +353 1 497 533</li>
+  </ul>
+</section>
+
+<footer>
+  <p>By: Enmanuel: Bique©. For the Claimant's-Knowledge: By the Autograph of the Living-Man: Enmanuel: Bique©. With the Claim of the Life: With the Claim of the Rights-Reserved: Without Prejudice: UCC 1-308.</p>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".animate");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.1 });
+    elements.forEach(el => observer.observe(el));
+  });
+</script>
 
 </body>
 </html>
