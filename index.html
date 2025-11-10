@@ -33,7 +33,7 @@
       border-radius: 8px;
     }
     header img {
-      max-width: 160px;
+      max-width: 120px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
@@ -47,7 +47,6 @@
     .animate { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
     .animate.visible { opacity: 1; transform: translateY(0); }
 
-    /* Timeline styling */
     .timeline-section {
       margin-bottom: 2.5em;
       padding: 0;
@@ -65,7 +64,50 @@
       box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
 
-    /* Responsive tweaks */
+    .section-buttons {
+      margin: 2em 0;
+      display: flex;
+      gap: 1em;
+      flex-wrap: wrap;
+    }
+    .section-buttons button {
+      background-color: var(--navy);
+      color: white;
+      border: none;
+      padding: 0.8em 1.2em;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .section-buttons button:hover {
+      background-color: var(--gold);
+      color: var(--navy);
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.7);
+    }
+    .popup-content {
+      background-color: white;
+      margin: 5% auto;
+      padding: 2em;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 600px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    .close {
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
     @media (max-width: 768px) {
       header { flex-direction: column; text-align: center; }
       .timeline-frame { height: 550px; }
@@ -73,75 +115,6 @@
   </style>
 </head>
 <body>
-
-<section class="timeline-section animate">
-  <h2>My Professional Journey</h2>
-  <iframe
-    class="timeline-frame"
-    src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vQMaXoVITAFQ1Uj1j1AHju66UvFO9xuAkFwbcizVCpHm1krvE1wtnek5uskP9uuXss4rO9PIQNPNERy&font=Default&lang=en&initial_zoom=2&width=100%25&height=650"
-    width="100%" height="650" frameborder="0"
-    allowfullscreen webkitallowfullscreen mozallowfullscreen>
-  </iframe>
-</section>
-
-<header class="animate">
-  <div>
-    <h1>Enmanuel Bique</h1>
-    <p class="highlight">Hybrid Law Practitioner | Wellness Mentor | Strategic Empowerment Coach</p>
-    <p><em>Jurisprudence, Strategic Leadership, and Social Economy</em></p>
-    <p>Highly committed law student with a strong foundation in trilingual communication (French, Spanish, English) and a focus on lawful practice and social economy leadership.</p>
-  </div>
-  <img src="Law-office.png" style="max-width:120px; height:auto; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.2);" alt="Law Office">
-</header>
-
-<section class="animate">
-  <h2>Personal Statement</h2>
-  <p><strong>Professional Summary:</strong> I am a committed law student focused on becoming a respected solicitor and social economy leader. Known for attention to detail, integrity, and strategic thinking, I bring a multicultural outlook and a passion for justice to every role.</p>
-</section>
-
-<section class="animate">
-  <h2>Education</h2>
-  <p><strong>Rathmines College, Dublin</strong> – QQI Certificate in Legal Studies (2025–2026)</p>
-  <p><strong>Kingstown College, Dublin</strong> – QQI Certificate in Mental Health & Wellness Life Coaching (2024–2025)</p>
-</section>
-
-<section class="animate">
-  <h2>Skills</h2>
-  <ul>
-    <li>Legal research, document drafting, strategic advocacy</li>
-    <li>Multilingual: French, Spanish, Portuguese</li>
-    <li>Technical troubleshooting (Windows, Linux Mint, VirtualBox)</li>
-    <li>Digital storytelling, résumé innovation</li>
-  </ul>
-</section>
-
-<section class="animate">
-  <h2>Professional Experience</h2>
-  <p><strong>Private Security Officer — RFC (2019–2023)</strong></p>
-  <ul>
-    <li>Crowd management, theft prevention, staff protection</li>
-    <li>CCTV monitoring and conflict resolution</li>
-  </ul>
-</section>
-
-<section class="animate">
-  <h2>Volunteer Work</h2>
-  <ul>
-    <li>Boxing coach & youth mentor (2018–2025): Led training sessions, planned sports events, cooked for youth groups</li>
-    <li>2019 -2020 I volunteered as a big brother at Tallaght community centre helping with youth work Helping To cook and planning sport events for a group of 10 kids</li>
-  </ul>
-</section>
-
-<section class="animate">
-  <h2>Interests & Hobbies</h2>
-  <p>Wellness and energy practices, jazz, painting, and the arts. Former professional boxer.</p>
-</section>
-
-<section class="graph animate">
-  <h2>Performance Metric</h2>
-  <img src="Performance-metric.png" alt="Performance Metric" style="max-width:65%; height:auto;">
-</section>
-
 <section class="animate">
   <h2>Contact</h2>
   <p>📞 <strong>Phone:</strong> +353 89 605 3548</p>
@@ -157,6 +130,16 @@
   </ul>
 </section>
 
+<!-- Avatar Popup System -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h3 id="popup-title"></h3>
+    <video id="popup-video" controls autoplay style="width:100%; border-radius:8px;"></video>
+    <p id="popup-caption"></p>
+  </div>
+</div>
+
 <footer>
   <p>By: Enmanuel: Bique©. For the Claimant's-Knowledge: By the Autograph of the Living-Man: Enmanuel: Bique©. With the Claim of the Life: With the Claim of the Rights-Reserved: Without Prejudice: UCC 1-308.</p>
 </footer>
@@ -171,6 +154,46 @@
     }, { threshold: 0.1 });
     elements.forEach(el => observer.observe(el));
   });
+
+  function openPopup(section) {
+    const popup = document.getElementById("popup");
+    const title = document.getElementById("popup-title");
+    const video = document.getElementById("popup-video");
+    const caption = document.getElementById("popup-caption");
+
+    const content = {
+      education: {
+        title: "Education",
+        video: "digital-resume-assets/Avatar-Enmanuel..mp4",
+        caption: "Here’s how my legal and wellness studies empower my professional journey."
+      },
+      skills: {
+        title: "Skills",
+        video: "digital-resume-assets/Avatar-Enmanuel..mp4",
+        caption: "These are the tools I use to lead, coach, and innovate across disciplines."
+      },
+      performance: {
+        title: "Performance Metric",
+        video: "digital-resume-assets/Avatar-Enmanuel..mp4",
+        caption: "This video breaks down my strategic impact and growth indicators."
+      },
+      communication: {
+        title: "Communication",
+        video: "digital-resume-assets/Avatar-Enmanuel..mp4",
+        caption: "Watch how I connect, mentor, and lead with clarity and empathy."
+      }
+    };
+
+    title.textContent = content[section].title;
+    video.src = content[section].video;
+    caption.textContent = content[section].caption;
+    popup.style.display = "block";
+  }
+
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("popup-video").pause();
+  }
 </script>
 
 </body>
