@@ -115,86 +115,86 @@
   </style>
 </head>
 <body>
+
+<section class="timeline-section animate">
+  <h2>My Professional Journey</h2>
+  <iframe
+    class="timeline-frame"
+    src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vQMaXoVITAFQ1Uj1j1AHju66UvFO9xuAkFwbcizVCpHm1krvE1wtnek5uskP9uuXss4rO9PIQNPNERy&font=Default&lang=en&initial_zoom=2&width=100%25&height=650"
+    width="100%" height="650" frameborder="0"
+    allowfullscreen webkitallowfullscreen mozallowfullscreen>
+  </iframe>
+</section>
+
+<header class="animate">
+  <div>
+    <h1>Enmanuel Bique</h1>
+    <p class="highlight">Hybrid Law Practitioner | Wellness Mentor | Strategic Empowerment Coach</p>
+    <p><em>Jurisprudence, Strategic Leadership, and Social Economy</em></p>
+    <p>Highly committed law student with a strong foundation in trilingual communication (French, Spanish, English) and a focus on lawful practice and social economy leadership.</p>
+  </div>
+  <img src="Law-office.png" alt="Law Office">
+</header>
+
 <section class="animate">
-  <h2>Contact</h2>
-  <p>📞 <strong>Phone:</strong> +353 89 605 3548</p>
-  <p>📧 <strong>Email:</strong> <a href="mailto:biqfitness@proton.me">biqfitness@proton.me</a></p>
-  <p>🔗 <strong>Linktree:</strong> <a href="https://linktr.ee/biqfitness" target="_blank">linktr.ee/biqfitness</a></p>
+  <h2>Explore My Résumé</h2>
+  <div class="section-buttons">
+    <button onclick="openPopup('education')">🎓 Education</button>
+    <button onclick="openPopup('skills')">🛠️ Skills</button>
+    <button onclick="openPopup('performance')">📊 Performance</button>
+    <button onclick="openPopup('communication')">🗣️ Communication</button>
+  </div>
 </section>
 
 <section class="animate">
-  <h2>Referees</h2>
+  <h2>Personal Statement</h2>
+  <p><strong>Professional Summary:</strong> I am a committed law student focused on becoming a respected solicitor and social economy leader. Known for attention to detail, integrity, and strategic thinking, I bring a multicultural outlook and a passion for justice to every role.</p>
+</section>
+
+<section class="animate">
+  <h2>Education</h2>
+  <p><strong>Rathmines College, Dublin</strong> – QQI Certificate in Legal Studies (2025–2026)</p>
+  <p><strong>Kingstown College, Dublin</strong> – QQI Certificate in Mental Health & Wellness Life Coaching (2024–2025)</p>
+</section>
+
+<section class="animate">
+  <h2>Skills</h2>
   <ul>
-    <li><strong>Lukas Wisniewski</strong> — Professional Trainer at David Floyd Gym | Tel: +353 89 444 8069</li>
-    <li><strong>Shane Dalton</strong> — Tutor at Rathmines College | Email: <a href="mailto:shane.dalton@rc.cdetb.ie">shane.dalton@rc.cdetb.ie</a> | Tel: +353 1 497 533</li>
+    <li>Legal research, document drafting, strategic advocacy</li>
+    <li>Multilingual: French, Spanish, Portuguese</li>
+    <li>Technical troubleshooting (Windows, Linux Mint, VirtualBox)</li>
+    <li>Digital storytelling, résumé innovation</li>
   </ul>
 </section>
 
-<!-- Avatar Popup System -->
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="close" onclick="closePopup()">&times;</span>
-    <h3 id="popup-title"></h3>
-    <video id="popup-video" controls autoplay style="width:100%; border-radius:8px;"></video>
-    <p id="popup-caption"></p>
-  </div>
-</div>
+<section class="animate">
+  <h2>Professional Experience</h2>
+  <p><strong>Private Security Officer — RFC (2019–2023)</strong></p>
+  <ul>
+    <li>Crowd management, theft prevention, staff protection</li>
+    <li>CCTV monitoring and conflict resolution</li>
+  </ul>
+</section>
 
-<footer>
-  <p>By: Enmanuel: Bique©. For the Claimant's-Knowledge: By the Autograph of the Living-Man: Enmanuel: Bique©. With the Claim of the Life: With the Claim of the Rights-Reserved: Without Prejudice: UCC 1-308.</p>
-</footer>
+<section class="animate">
+  <h2>Volunteer Work</h2>
+  <ul>
+    <li>Boxing coach & youth mentor (2018–2025): Led training sessions, planned sports events, cooked for youth groups</li>
+    <li>2019–2020: Volunteered as a big brother at Tallaght Community Centre helping with youth work, cooking, and planning sport events for a group of 10 kids</li>
+  </ul>
+</section>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".animate");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("visible");
-      });
-    }, { threshold: 0.1 });
-    elements.forEach(el => observer.observe(el));
-  });
+<section class="animate">
+  <h2>Interests & Hobbies</h2>
+  <p>Wellness and energy practices, jazz, painting, and the arts. Former professional boxer.</p>
+</section>
 
-  function openPopup(section) {
-    const popup = document.getElementById("popup");
-    const title = document.getElementById("popup-title");
-    const video = document.getElementById("popup-video");
-    const caption = document.getElementById("popup-caption");
+<section class="graph animate">
+  <h2>Performance Metric</h2>
+  <img src="Performance-metric.png" alt="Performance Metric" style="max-width:65%; height:auto;">
+</section>
 
-    const content = {
-      education: {
-        title: "Education",
-        video: "digital-resume-assets/Avatar-Enmanuel..mp4",
-        caption: "Here’s how my legal and wellness studies empower my professional journey."
-      },
-      skills: {
-        title: "Skills",
-        video: "digital-resume-assets/Avatar-Enmanuel..mp4",
-        caption: "These are the tools I use to lead, coach, and innovate across disciplines."
-      },
-      performance: {
-        title: "Performance Metric",
-        video: "digital-resume-assets/Avatar-Enmanuel..mp4",
-        caption: "This video breaks down my strategic impact and growth indicators."
-      },
-      communication: {
-        title: "Communication",
-        video: "digital-resume-assets/Avatar-Enmanuel..mp4",
-        caption: "Watch how I connect, mentor, and lead with clarity and empathy."
-      }
-    };
-
-    title.textContent = content[section].title;
-    video.src = content[section].video;
-    caption.textContent = content[section].caption;
-    popup.style.display = "block";
-  }
-
-  function closePopup() {
-    document.getElementById("popup").style.display = "none";
-    document.getElementById("popup-video").pause();
-  }
-</script>
-
-</body>
-</html>
+<section class="animate">
+  <h2>Contact</h2>
+  <p>📞 <strong>Phone:</strong> +353 89 605 3548</p>
+  <p>📧 <strong>Email:</strong> <a href="mailto:biqfitness@proton
